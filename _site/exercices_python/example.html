@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>DataCamp Light | Standalone example</title>
+  <link rel='shortcut icon' type='image/x-icon' href='https://www.datacamp.com/assets/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+
+    [data-datacamp-exercise] {
+        visibility: hidden;
+      }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react-dev.js.gz"></script>
+</head>
+<body>
+  <div class="instructions">
+    <h2>Exercice 1 </h2>
+    <p>
+      Vous disposez d'un jeu de données représentant des mois et des utilisateurs. Votre tâche est de créer un graphique linéaire pour visualiser ces données. Utilisez la bibliothèque matplotlib pour accomplir cela.
+    </p>
+</div>
+    <div class="exercise">
+      <div class="title">
+        <h2>Graphique linéaire avec matplotlib</h2>
+      </div>
+  
+      <div data-datacamp-exercise data-lang="python" data-height="auto">
+        <code data-type="pre-exercise-code"># no pec</code>
+  
+        <code data-type="sample-code">
+          import matplotlib.pyplot as plt
+
+          mois = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin']
+          utilisateurs = [120, 150, 110, 210, 240, 100]
+        </code>
+  
+        <code data-type="solution">
+          import matplotlib.pyplot as plt
+
+          mois = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin']
+          utilisateurs = [120, 150, 110, 210, 240, 100]
+          plt.plot(range(len(mois)), utilisateurs)
+          plt.xticks(range(len(mois)), mois)
+          plt.title("Nombre d'utilisateurs au fil des mois")
+          plt.xlabel("Mois")
+          plt.ylabel("Nombre d'utilisateurs")
+          plt.show()
+        </code>
+
+        <code data-type="sct">
+        import matplotlib.pyplot as plt
+        test_import("matplotlib.pyplot", same_as = plt)
+
+        test_object("mois")
+        test_object("utilisateurs")
+
+        test_function("matplotlib.pyplot.plot")
+        test_function("matplotlib.pyplot.xticks", index=1)
+        test_function("matplotlib.pyplot.title")
+        test_function("matplotlib.pyplot.xlabel")
+        test_function("matplotlib.pyplot.ylabel")
+        test_function("matplotlib.pyplot.title", args=["Nombre d'utilisateurs au fil des mois"])
+        test_function("matplotlib.pyplot.xlabel", args=["Mois"])
+        test_function("matplotlib.pyplot.ylabel", args=["Nombre d'utilisateurs"])
+        test_function("matplotlib.pyplot.show")
+        success_msg("Bravo ! Vous avez correctement tracé le graphique linéaire avec matplotlib.")
+        </code>
+        <div data-type="hint">
+          N'oubliez pas d'utiliser plt.xticks() pour associer les noms des mois aux points de l'axe x après les avoir tracés avec des indices numériques.
+        </div>
+      </div>
+    </div>
+</body>
+<div class="instructions">
+  <h2>Exercice 2 </h2>
+  <p>
+    Vous disposez d'un jeu de données représentant des mois et des ventes. Votre tâche est de créer un diagramme à barre ('barplot') pour visualiser ces données. Utilisez la bibliothèque matplotlib pour accomplir cela.
+  </p>
+</div>
+  <div class="exercise">
+    <div class="title">
+      <h2>Diagramme à barre avec matplotlib</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="python" data-height="500">
+      <code data-type="pre-exercise-code"># no pec</code>
+      <code data-type="sample-code">
+        import matplotlib.pyplot as plt
+
+        # Créer un diagramme à barre avec ces données
+        mois = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin']
+        ventes = [120, 150, 110, 210, 240, 100]
+      </code>
+      <code data-type="solution">
+        import matplotlib.pyplot as plt
+
+        mois = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin']
+        ventes = [120, 150, 110, 210, 240, 100]
+        
+        plt.bar(range(len(mois)), ventes)
+        plt.title("Ventes mensuelles d'un produit")
+        plt.xlabel("Mois")
+        plt.ylabel("Ventes (unités)")
+        plt.show()
+        </code>
+      <code data-type="sct">
+        test_function("matplotlib.pyplot.bar", args=["range(len(mois))"])
+        test_function("matplotlib.pyplot.title")
+        test_function("matplotlib.pyplot.xlabel")
+        test_function("matplotlib.pyplot.ylabel")
+        test_function("matplotlib.pyplot.title", args=["Ventes mensuelles d'un produit"])
+        test_function("matplotlib.pyplot.xlabel", args=["Mois"])
+        test_function("matplotlib.pyplot.ylabel", args=["Ventes (unités)"])
+        test_function("matplotlib.pyplot.show")
+        success_msg("Génial! Vous avez réussi à faire un diagramme à barre avec Python !")
+      </code>
+      <div data-type="hint">
+        Utilisez la fonction <code>plt.bar()</code> pour créer le diagramme à barres. N'oubliez pas d'associer les indices des mois à leurs ventes respectives en utilisant <code>range(len(mois))</code> comme premier argument et <code>ventes</code> comme second argument. Ajoutez des titres et des étiquettes aux axes pour rendre votre graphique plus informatif.
+      </div>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <h2>Exercice 3 </h2>
+    <p>
+      Vous disposez d'un jeu de données aléatoires. Votre tâche est de créer une carte de chaleur ('heatmap') pour visualiser ces données. Utilisez les bibliothèques seaborn et matplotlib pour accomplir cela.
+    </p>
+</div>
+<div class="exercise">
+  <div class="title">
+    <h2>HeatMap avec Seaborn</h2>
+  </div>
+  <div data-datacamp-exercise data-lang="python" data-height="500">
+    <code data-type="sample-code">
+      import seaborn as sns
+      import matplotlib.pyplot as plt
+      import numpy as np
+
+      # Créer une Heatmap avec ces données
+      np.random.seed(10)
+      data = np.random.rand(7, 5)
+    </code>
+    <code data-type="solution">
+      import seaborn as sns
+      import matplotlib.pyplot as plt
+      import numpy as np
+
+      np.random.seed(10)
+      data = np.random.rand(7, 5)
+      sns.heatmap(data)
+      plt.title('Heatmap')
+      plt.show()
+    </code>
+    <code data-type="sct">
+      test_function("seaborn.heatmap", args=["data"])
+      test_function("matplotlib.pyplot.title")
+      test_function("matplotlib.pyplot.title", args=["Heatmap"])
+      test_function("matplotlib.pyplot.show")
+      success_msg("Génial! Vous avez réussi à faire une heatmap avec Python !")
+    </code>
+    <div data-type="hint">
+      Utilisez la fonction <code>sns.heatmap()</code> pour créer la heatmap à partir de votre matrice de données. N'oubliez pas d'ajouter un titre avec <code>plt.title()</code> et d'afficher le graphique avec <code>plt.show()</code>.
+    </div>
+  </div>
+</div>
+
+  <div class="instructions">
+    <h2>Exercice 4 </h2>
+    <p>
+      Vous disposez d'un jeu de données aléatoires. Votre tâche est de créer un graphique de densité pour visualiser ces données. Utilisez les bibliothèques seaborn et matplotlib pour accomplir cela.
+    </p>
+</div>
+  <div class="exercise">
+    <div class="title">
+      <h2>Graphique de densité avec Seaborn</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="python" data-height="350">
+      <code data-type="pre-exercise-code"># no pec</code>
+      <code data-type="sample-code">
+        import seaborn as sns
+        import matplotlib.pyplot as plt
+        import numpy as np
+
+        # Générer des données aléatoires normalement distribuées
+        data = np.random.randn(1000)
+      </code>
+      <code data-type="solution">
+        import seaborn as sns
+        import matplotlib.pyplot as plt
+        import numpy as np
+
+        data = np.random.randn(1000)
+
+        sns.set(style="whitegrid")
+
+        plt.figure(figsize=(8, 6))
+        sns.kdeplot(data, shade=True, color="r", alpha=0.5)
+
+        plt.title('Graphique de densité pour des données normalement distribuées')
+        plt.xlabel('Valeurs')
+        plt.ylabel('Densité')
+
+        plt.show()
+
+      </code>
+      <code data-type="sct">
+        test_import("seaborn")
+        test_import("matplotlib.pyplot")
+        test_import("numpy")
+        test_function("seaborn.set")
+        test_object("data")
+        test_function("matplotlib.pyplot.figure")
+        test_function("seaborn.kdeplot", args=["data"])
+        test_function("matplotlib.pyplot.title")
+        test_function("matplotlib.pyplot.xlabel")
+        test_function("matplotlib.pyplot.ylabel")
+        test_function("matplotlib.pyplot.show")
+        success_msg("Génial! Vous avez réussi à faire un graphique de densité avec Python !")
+      </code>
+      <div data-type="hint">
+        Pour créer le graphique de densité, utilisez la fonction <code>sns.kdeplot(data, shade=True)</code> où <code>data</code> est votre ensemble de données. Définissez les options telles que <code>color</code> et <code>alpha</code> pour améliorer la visualisation. N'oubliez pas de configurer les étiquettes des axes avec <code>plt.xlabel()</code> et <code>plt.ylabel()</code>, et de donner un titre avec <code>plt.title()</code>.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

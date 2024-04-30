@@ -1,0 +1,30 @@
+::: {#fig-data_visualization}
+
+<img width="560" height="315" src="https://www.opendatasoft.com/wp-content/uploads/2022/08/Blog-thumbnail.png"></img>
+
+Blog-thumbnail.png.
+
+:::
+
+<div style="text-align: center;"><strong>Explorez le pouvoir de la Data Visualisation avec R et Python</strong></div>
+
+<div style="text-align: center;">Saviez-vous que vos données ont des histoires à raconter ?</div>
+<div style="text-align: center;">Découvrez comment les visualiser avec R et Python!</div>
+<br>
+
+Bienvenue sur DATAVIZ, le site dédié à la data visualisation avec R et Python. Ici, vous trouverez tout ce dont vous avez besoin pour transformer vos données brutes en visualisations informatives et percutantes. Que vous soyez novice ou utilisateur expérimenté, plongez dans le monde fascinant de la visualisation de données et découvrez comment R et Python peuvent vous aider à créer des graphiques qui captivent et informent.
+
+Ce que vous trouverez sur ce site :
+
+<ul>
+  <li>Des tutoriels pas à pas pour apprendre les bases de la visualisation de données avec ces deux langages.</li>
+  <li>Des astuces et des techniques avancées pour créer des graphiques interactifs et dynamiques.</li>
+  <li>Des exemples pratiques et des exercices pour vous inspirer dans vos propres projets de visualisation de données.</li>
+</ul>
+
+Prêt à commencer ? Explorez nos ressources dès maintenant et laissez vos données raconter leur histoire !
+
+<a href=datar.qmd class="bouton">📈 Commencer l'exploration avec R</a>
+<br>
+<a href=datap.qmd class="bouton">📊 Commencer l'exploration avec Python</a>
+

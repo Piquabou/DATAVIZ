@@ -1,0 +1,31 @@
+project: 
+  type: website
+
+website: 
+  page-footer: "Copyright © 2024 Ellen VIDAILLAC. Tous droits réservés"
+  back-to-top-navigation: true
+  title: "DATAVIZ"
+  navbar: 
+    left: 
+      - href: accueil.qmd
+        text: Accueil
+      - href: datar.html
+        text: Dataviz avec R
+      - href: datap.html
+        text: Dataviz avec Python
+      - href: exercices_r.qmd
+        text: Exercices sur R
+      - href: exercices_python.qmd
+        text: Exercices sur Python
+      - href: about.qmd
+        text: À Propos
+
+format: 
+  html: 
+    theme: pulse
+    css: styles.css
+    toc: true
+
+
+
+

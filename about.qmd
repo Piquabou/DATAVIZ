@@ -1,0 +1,14 @@
+---
+title: "À Propos"
+---
+
+<img width="560" height="315" src="https://image.noelshack.com/fichiers/2024/17/2/1713861006-extra.jpg"></img>
+
+Moi c'est Ellen, je suis une étudiante en Bachelor 1 à l'IA School de Toulouse.
+
+Dans la vie, j'aime les pâtes au thon et la data science.
+
+C'est pour cela que je fais un Bachelor en data science / analysis.
+
+C'est avec elle que j'ai appris beaucoup de choses, c'est ma prof <a href="https://www.linkedin.com/in/menyssacherifaluron/">elle</a>, elle est sympa.
+

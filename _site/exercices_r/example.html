@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>DataCamp Light | Standalone example</title>
+  <link rel='shortcut icon' type='image/x-icon' href='https://www.datacamp.com/assets/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+
+    [data-datacamp-exercise] {
+        visibility: hidden;
+      }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react-dev.js.gz"></script>
+</head>
+<body>
+  <div class="instructions">
+    <h2>Exercice 1 </h2>
+    <p>
+      Vous disposez d'un jeu de données représentant différentes catégories et leurs valeurs associées. Votre tâche est de créer un diagramme à barres (barplot) pour visualiser ces données. Utilisez la bibliothèque ggplot2 en R pour accomplir cela.
+    </p>
+</div>
+  <div class="exercise">
+    <div class="title">
+      <h2>Barplot</h2>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+        library(ggplot2)
+        data &lt;- data.frame(
+        Categorie = c("A", "B", "C", "D", "E"),
+        Valeur = c(20, 35, 40, 15, 25)
+        )
+      </code>
+      <code data-type="solution">
+        library(ggplot2)
+        data &lt;- data.frame(
+          Categorie = c("A", "B", "C", "D", "E"),
+          Valeur = c(20, 35, 40, 15, 25)
+        )
+        ggplot(data, aes(x = Categorie, y = Valeur)) +
+          geom_bar(stat = "identity") +
+          labs(title = "Barplot", x = "Categorie", y = "Valeur")
+      </code>
+      <code data-type="sct">
+        test_student_typed("library(ggplot2)", not_typed_msg = "Assurez-vous d'avoir bien charger la librarie 'ggplot2'.")
+        test_student_typed("geom_bar(", not_typed_msg = "Assurez-vous d'avoir utilisé la méthode 'geom_bar'.")
+        test_student_typed("stat = 'identity'", not_typed_msg = "N'oubliez pas de définir le paramètre stat 'identity' dans 'geom_bar'.")
+        test_student_typed("labs(", not_typed_msg = "Assurez-vous d'utiliser 'labs' pour ajouter des titres et des étiquettes d'axes.")
+        success_msg("Genial! Vous avez reussi a faire un 'barplot' avec R !")
+      </code>
+      
+      <div data-type="hint">
+        <p>Indice : Utiliser 'geom_bar(stat = 'identity')' pour tracer les barres basées sur les valeurs que vous avez.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <h2>Exercice 2 </h2>
+    <p>
+      Vous disposez d'un jeu de données représentant des âges. Votre tâche est de créer un histogramme pour visualiser ces données. Utilisez la bibliothèque ggplot2 en R pour accomplir cela.
+    </p>
+</div>
+  <div class="exercise">
+    <div class="title">
+      <h2>Histogramme</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="r" data-height="500">
+      <code data-type="pre-exercise-code"># no pec</code>
+      <code data-type="sample-code">
+        # Fais un histogramme avec ces données
+        library(ggplot2)
+        data &lt;- data.frame(
+          age = c(25, 30, 45, 22, 34, 30, 40, 26, 19, 21, 36, 42, 23, 29, 31)
+        )
+      </code>
+      <code data-type="solution">
+        library(ggplot2)
+        data &lt;- data.frame(
+          age = c(25, 30, 45, 22, 34, 30, 40, 26, 19, 21, 36, 42, 23, 29, 31)
+        )
+        ggplot(data, aes(x = age)) +
+          geom_histogram(binwidth = 5) +
+          labs(title = "Histogramme des âges", x = "Âge", y = "Nombre de personnes") +
+          theme_minimal()
+        </code>
+        <code data-type="sct">
+          test_student_typed("library(ggplot2)", not_typed_msg = "Assurez-vous d'avoir bien charger la librairie 'ggplot2'.")
+          test_student_typed("geom_histogram(", not_typed_msg = "Assurez-vous d'utiliser 'geom_histogram' pour créer un histogramme.")
+          test_student_typed("binwidth = 5", not_typed_msg = "'geom_histogram(binwidth = 5)'")
+          test_student_typed("labs(", not_typed_msg = "Assurez-vous d'utiliser 'labs' pour ajouter des titres et des étiquettes d'axes.")
+          test_student_typed("theme_minimal()", not_typed_msg = "N'oubliez pas d'appliquer 'theme_minimal()")
+          success_msg("Genial ! Vous avez reussi a faire un histogramme avec R !")
+        </code>
+      <div data-type="hint">
+        Indice : geom_histogram(binwidth = 5)
+      </div>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <h2>Exercice 3 </h2>
+    <p>
+      Vous disposez d'un jeu de données représentant des x et des y. Votre tâche est de créer un nuage de points (scatterplot) pour visualiser ces données. Utilisez la bibliothèque ggplot2 en R pour accomplir cela.
+    </p>
+</div>
+  <div class="exercise">
+    <div class="title">
+      <h2>Scatterplot / Jitter</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="r" data-height="500">
+      <code data-type="pre-exercise-code"># no pec</code>
+      <code data-type="sample-code">
+        # Fais un scatterplot avec ces données
+        library(ggplot2)
+        data_scatter &lt;- data.frame(
+          x = c(5, 7, 8, 5, 6, 9, 12, 15, 16, 15),
+          y = c(3, 4, 2, 8, 7, 10, 12, 9, 12, 11)
+        )</code>
+        <code data-type="solution">
+          library(ggplot2)
+          data_scatter &lt;- data.frame(
+            x = c(5, 7, 8, 5, 6, 9, 12, 15, 16, 15),
+            y = c(3, 4, 2, 8, 7, 10, 12, 9, 12, 11)
+          )
+        
+        ggplot(data_scatter, aes(x = x, y = y)) +
+        geom_point() +
+        labs(title = "Scatterplot de x vs y", x = "Variable X", y = "Variable Y") +
+        theme_minimal()
+        </code>
+        <code data-type="sct">
+          test_student_typed("library(ggplot2)", not_typed_msg = "Assurez-vous d'avoir bien charger la librairie 'ggplot2'.")
+          test_student_typed("ggplot(", not_typed_msg = "Assurez-vous d'utiliser 'ggplot' pour créer un scatterplot.")
+          test_student_typed("geom_point(", not_typed_msg = "Assurez-vous d'utiliser 'geom_point' pour créer un scatterplot.")
+          test_student_typed("labs(", not_typed_msg = "Assurez-vous d'utiliser 'labs' pour ajouter des titres et des étiquettes d'axes.")
+          test_student_typed("theme_minimal()", not_typed_msg = "N'oubliez pas d'appliquer 'theme_minimal()")
+          success_msg("Genial ! Vous avez reussi a faire un scatterplot avec R !")
+        </code>
+        <div data-type="hint">
+          Indice : Utilisez 'geom_point()' pour ajouter des points à votre nuage de points. N'oubliez pas de définir 'x' et 'y' dans aes() pour la cartographie.
+        </div>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <h2>Exercice 4 </h2>
+    <p>
+      Vous disposez d'un jeu de données représentant des mois associées à leur vente, et 4 produits. Votre tâche est de créer un graphique multi-panneaux pour visualiser ces données par mois. Utilisez la bibliothèque ggplot2 en R pour accomplir cela.
+    </p>
+</div>
+  <div class="exercise">
+    <div class="title">
+      <h2>Graphique multi-panneaux</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="r" data-height="350">
+      <code data-type="pre-exercise-code"># no pec</code>
+      <code data-type="sample-code">
+        # Créer un graphique multi-panneaux avec ces données que tu nommeras p
+        library(ggplot2)
+        
+        set.seed(123)  # Pour la reproductibilité
+        data &lt;- data.frame(
+          Mois = rep(1:12, 4),
+          Ventes = c(rnorm(12, mean=100, sd=10), rnorm(12, mean=200, sd=15),
+                     rnorm(12, mean=300, sd=20), rnorm(12, mean=400, sd=25)),
+          Produit = rep(c("Produit A", "Produit B", "Produit C", "Produit D"), each=12)
+        )
+      </code>
+      <code data-type="solution">
+        library(ggplot2)
+        
+        set.seed(123)  # Pour la reproductibilité
+        data &lt;- data.frame(
+          Mois = rep(1:12, 4),
+          Ventes = c(rnorm(12, mean=100, sd=10), rnorm(12, mean=200, sd=15),
+                     rnorm(12, mean=300, sd=20), rnorm(12, mean=400, sd=25)),
+          Produit = rep(c("Produit A", "Produit B", "Produit C", "Produit D"), each=12)
+        )
+        
+        p &lt;- ggplot(data, aes(x=Mois, y=Ventes, group=Produit, color=Produit)) +
+          geom_line() + 
+          facet_wrap(~Produit) +
+          labs(title="Ventes Mensuelles par Produit",
+               x="Mois",
+               y="Ventes") +
+          theme_minimal()
+
+          print(p)
+        
+      </code>
+      <code data-type="sct">
+        test_student_typed("library(ggplot2)", not_typed_msg = "N'oubliez pas de charger la bibliothèque ggplot2.")
+        test_student_typed("ggplot(", not_typed_msg = "Vous devez commencer votre graphique avec ggplot().")
+        test_student_typed("geom_line()", not_typed_msg = "Vous devez utiliser geom_line() pour les lignes du graphique.")
+        test_student_typed("facet_wrap(", not_typed_msg = "Utilisez facet_wrap() pour créer des panneaux séparés pour chaque produit.")
+        test_student_typed("theme_minimal()", not_typed_msg = "Utilisez theme_minimal() pour un thème plus épuré.")
+        success_msg("Excellent travail ! Votre graphique multi-panneaux est correctement configure.")
+      </code>
+      <div data-type="hint">
+        <p>
+          Pensez à utiliser <code>ggplot()</code>, <code>geom_line()</code>, <code>facet_wrap()</code> et <code>theme_minimal()</code> pour structurer votre graphique.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
