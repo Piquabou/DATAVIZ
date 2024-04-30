@@ -7,7 +7,7 @@ website:
   title: "DATAVIZ"
   navbar: 
     left: 
-      - href: accueil.qmd
+      - href: index.qmd
         text: Accueil
       - href: datar.html
         text: Dataviz avec R

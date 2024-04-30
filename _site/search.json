@@ -194,5 +194,12 @@
     "title": "Créer des graphiques avec R en utilisant ggplot2",
     "section": "Affichage de la carte avec le code en intégralité",
     "text": "Affichage de la carte avec le code en intégralité\n\ndataToulouse &lt;- data.frame(\n  lng = c(1.431889991011, 1.448399993334, 1.447109657227),\n  lat = c(43.609126998861, 43.606276020224, 43.604503567579),\n  label = c(\"The Botanist Pub\", \"IA School\", \"Jardin Pierre Goudouli\")\n)\n\n# Initialisation d'une carte interactive avec des données spécifiques à Toulouse\nmap_Toulouse &lt;- leaflet(dataToulouse) %&gt;% \n\n# Ajout des tuiles par défaut d'OpenStreetMap\n  addTiles() %&gt;%\n\n# Ajout de marqueurs sur la carte avec des popups pour chaque lieu\n  addMarkers(~lng, ~lat, popup = ~label) %&gt;%\n\n# Utilisation de tuiles Stamen Toner Lite pour un style de carte différent\n  addProviderTiles(providers$Stamen.TonerLite)\n\n# Affichage de la carte\nmap_Toulouse\n\n\n\n\n\n\nMaintenant que vous savez créer des graphiques avec R, passons aux exercices !"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DATAVIZ",
+    "section": "",
+    "text": "Figure 1: Blog-thumbnail.png.\n\n\n\n\nExplorez le pouvoir de la Data Visualisation avec R et Python\n\n\nSaviez-vous que vos données ont des histoires à raconter ?\n\n\nDécouvrez comment les visualiser avec R et Python!\n\n\nBienvenue sur DATAVIZ, le site dédié à la data visualisation avec R et Python. Ici, vous trouverez tout ce dont vous avez besoin pour transformer vos données brutes en visualisations informatives et percutantes. Que vous soyez novice ou utilisateur expérimenté, plongez dans le monde fascinant de la visualisation de données et découvrez comment R et Python peuvent vous aider à créer des graphiques qui captivent et informent.\nCe que vous trouverez sur ce site :\n\n\nDes tutoriels pas à pas pour apprendre les bases de la visualisation de données avec ces deux langages.\n\n\nDes astuces et des techniques avancées pour créer des graphiques interactifs et dynamiques.\n\n\nDes exemples pratiques et des exercices pour vous inspirer dans vos propres projets de visualisation de données.\n\n\nPrêt à commencer ? Explorez nos ressources dès maintenant et laissez vos données raconter leur histoire !\n📈 Commencer l’exploration avec R  📊 Commencer l’exploration avec Python\n\n\n\n Back to top"
   }
 ]
