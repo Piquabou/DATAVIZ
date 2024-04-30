@@ -196,4 +196,20 @@
         
       </code>
       <code data-type="sct">
-        test_student_typed("library(ggplot2)", not_typed_msg = "N'oubliez pas de charger la bi
+        test_student_typed("library(ggplot2)", not_typed_msg = "N'oubliez pas de charger la bibliothèque ggplot2.")
+        test_student_typed("ggplot(", not_typed_msg = "Vous devez commencer votre graphique avec ggplot().")
+        test_student_typed("geom_line()", not_typed_msg = "Vous devez utiliser geom_line() pour les lignes du graphique.")
+        test_student_typed("facet_wrap(", not_typed_msg = "Utilisez facet_wrap() pour créer des panneaux séparés pour chaque produit.")
+        test_student_typed("theme_minimal()", not_typed_msg = "Utilisez theme_minimal() pour un thème plus épuré.")
+        success_msg("Excellent travail ! Votre graphique multi-panneaux est correctement configure.")
+      </code>
+      <div data-type="hint">
+        <p>
+          Pensez à utiliser <code>ggplot()</code>, <code>geom_line()</code>, <code>facet_wrap()</code> et <code>theme_minimal()</code> pour structurer votre graphique.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
