@@ -22,43 +22,32 @@ ggplot(data, aes(x = Catégorie, y = Valeur)) +
 # Barres bleues, hauteur = valeurs des données
   geom_bar(stat = "identity", fill = "skyblue") +  
 
-  # Ajout de titres et étiquettes
+# Ajout de titres et étiquettes
   labs(title = "Exemple de Barplot", x = "Catégorie", y = "Valeur")
 ```
 
 ## Histogrammes
 
 Un histogramme est utilisé pour représenter la distribution des valeurs d'une seule variable quantitative, en divisant la plage des valeurs en intervalles et en comptant le nombre d'observations dans chaque intervalle.
+
 ```{r}
 # Création d'un nouveau data.frame
-
-noms_produits <- c("Produit A", "Produit B", "Produit C",
-"Produit D", "Produit E")
-mois <- rep(c("Janvier", "Février", "Mars", "Avril"),
-each = length(noms_produits))
-ventes <- round(runif(length(noms_produits) * length(unique(mois)), 
-min = 100, max = 500))
-
-data2 <- data.frame(
-  Produit = rep(noms_produits, times = length(unique(mois))),
-  Mois = mois,
-  Ventes = ventes
+data <- data.frame(
+  Catégorie = c("A", "B", "C", "D", "E"),
+  Valeur = c(20, 35, 15, 30, 25)
 )
-```
 
-```{r}
-# Création d'un histogramme pour visualiser la distribution des ventes mensuelles
+# Chargement de la bibliothèque nécessaire
+library(ggplot2)
 
-ggplot(data2, aes(x = Ventes)) +
-
-# Histogramme bleu avec bord noir
-  geom_histogram(binwidth = 50, fill = "skyblue", color = "black") +  
-
-
-# Titres et étiquettes
-  labs(title = "Histogramme des ventes mensuelles", x = "Ventes", 
-  y = "Fréquence")
-
+# Création d'un diagramme à barres pour visualiser la distribution des ventes mensuelles
+ggplot(data, aes(x = Catégorie, y = Valeur)) +
+  
+  # Diagramme à barres bleu avec bord noir
+  geom_col(fill = "skyblue", color = "black") +  
+  
+  # Titres et étiquettes
+  labs(title = "Histogramme des ventes mensuelles", x = "Catégorie", y = "Ventes")
 ```
 
 ## Scatterplot et Jitter
