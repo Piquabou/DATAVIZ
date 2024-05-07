@@ -20,10 +20,10 @@ data <- data.frame(
 ggplot(data, aes(x = Catégorie, y = Valeur)) +
 
 # Barres bleues, hauteur = valeurs des données
-  geom_bar(stat = "identity", fill = "skyblue") +  
+geom_bar(stat = "identity", fill = "skyblue") +  
 
 # Ajout de titres et étiquettes
-  labs(title = "Exemple de Barplot", x = "Catégorie", y = "Valeur")
+labs(title = "Exemple de Barplot", x = "Catégorie", y = "Valeur")
 ```
 
 ## Histogrammes
@@ -42,12 +42,12 @@ library(ggplot2)
 
 # Création d'un diagramme à barres pour visualiser la distribution des ventes mensuelles
 ggplot(data, aes(x = Catégorie, y = Valeur)) +
-  
-  # Diagramme à barres bleu avec bord noir
-  geom_col(fill = "skyblue", color = "black") +  
-  
-  # Titres et étiquettes
-  labs(title = "Histogramme des ventes mensuelles", x = "Catégorie", y = "Ventes")
+
+# Diagramme à barres bleu avec bord noir
+geom_col(fill = "skyblue", color = "black") +  
+
+# Titres et étiquettes
+labs(title = "Histogramme des ventes mensuelles", x = "Catégorie", y = "Ventes")
 ```
 
 ## Scatterplot et Jitter
@@ -138,21 +138,21 @@ donnees <- data.frame(
 # Créer le pie plot
 graphique_pie <- ggplot(donnees, aes(x = "", y = valeur, fill = categorie)) +
 
-  geom_bar(stat = "identity", width = 1) +
-  # Utiliser des coordonnées polaires pour le graphique en secteurs
-  coord_polar("y", start = 0) +
+geom_bar(stat = "identity", width = 1) +
+# Utiliser des coordonnées polaires pour le graphique en secteurs
+coord_polar("y", start = 0) +
 
 # Ajouter un titre
-  labs(title = "Faut-il faire des camenberts ?") +
+labs(title = "Faut-il faire des camenberts ?") +
 
 # Couleur bleue pour "Non" et rouge pour "Non en rouge"
-  scale_fill_manual(values = c("#1f77b4", "red")) +
+scale_fill_manual(values = c("#1f77b4", "red")) +
 
 # Supprimer les axes et le fond
-  theme_void() +
+theme_void() +
 
 # Placer la légende à droite du graphique
-  theme(legend.position = "right")
+theme(legend.position = "right")
 
 # Afficher le pie plot
 print(graphique_pie)
@@ -188,11 +188,11 @@ data <- data.frame(
 ggplot(data, aes(x = Age, y = Salaire, fill = Nom)) +
 
 # Affiche les barres séparées par Nom
-  geom_bar(stat = "identity", position = "dodge") +
+geom_bar(stat = "identity", position = "dodge") +
 
-  # Couleurs personnalisées pour chaque Nom
-  scale_fill_manual(values = c("Alice" = "#EB9C64", "Bob" = "#FF8789", 
-  "Charlie" = "#8FBF9F", "David" = "#346145", "Emma" = "#554E4F"))
+# Couleurs personnalisées pour chaque Nom
+scale_fill_manual(values = c("Alice" = "#EB9C64", "Bob" = "#FF8789", 
+"Charlie" = "#8FBF9F", "David" = "#346145", "Emma" = "#554E4F"))
 ```
 
 ## Ajouter des titres et des étiquettes
@@ -215,8 +215,7 @@ ggplot(data, aes(x = Age, y = Salaire, fill = Nom)) +
   theme(axis.title = element_text(size = 12, face = "bold"),  
 
 # Style du titre principal
-        plot.title = element_text(size = 14, face = "bold"))  
-        
+plot.title = element_text(size = 14, face = "bold"))  
 ```
 
 ## Personnaliser les axes
@@ -227,23 +226,23 @@ ggplot(data, aes(x = Age, y = Salaire, fill = Nom)) +
 
 ```{r}
 ggplot(data, aes(x = Age, y = Salaire, fill = Nom)) +
-  geom_bar(stat = "identity", position = "dodge") +  
-  # Utilise des barres séparées pour chaque Nom
+geom_bar(stat = "identity", position = "dodge") +  
+# Utilise des barres séparées pour chaque Nom
 
 # Limite l'axe X de 20 à 50 ans avec des intervalles de 5 ans
-  scale_x_continuous(limits = c(20, 50), breaks = seq(20, 50, 5)) +
+scale_x_continuous(limits = c(20, 50), breaks = seq(20, 50, 5)) +
 
 # Limite l'axe Y de 0 à 100000 € avec des intervalles de 10000 €
-  scale_y_continuous(limits = c(0, 100000), breaks = seq(0, 100000, 10000)) +
+scale_y_continuous(limits = c(0, 100000), breaks = seq(0, 100000, 10000)) +
 
 # Ajoute un titre et des étiquettes d'axe
-  labs(title = "Salaire en fonction de l'âge", x = "Âge (ans)", y = "Salaire (€)") +
+labs(title = "Salaire en fonction de l'âge", x = "Âge (ans)", y = "Salaire (€)") +
 
 # Personnalise les lignes des axes
-  theme(axis.line = element_line(color = "black", linewidth = 0.5),
+theme(axis.line = element_line(color = "black", linewidth = 0.5),
 
 # Personnalise les lignes de grille principales
-        panel.grid.major = element_line(color = "gray", linewidth = 0.5))
+panel.grid.major = element_line(color = "gray", linewidth = 0.5))
 ```
 
 ## Modifier les légendes
@@ -325,22 +324,22 @@ theme_minimal() +
 theme(axis.text.x = element_text(angle = 45, hjust = 1),
 
 # Placer la légende en bas
-      legend.position = "bottom",
+legend.position = "bottom",
 
 # Supprimer le titre de la légende
-      legend.title = element_blank(),
+legend.title = element_blank(),
 
 # Mettre la légende dans une boîte horizontale
-      legend.box = "horizontal",
+legend.box = "horizontal",
 
 # Espacement entre les panneaux
-      panel.spacing = unit(1, "lines"),
+panel.spacing = unit(1, "lines"),
 
 # Supprimer le fond des panneaux
-      strip.background = element_blank(),
+strip.background = element_blank(),
 
 # Texte en gras pour les titres des panneaux
-      strip.text = element_text(face = "bold"))
+strip.text = element_text(face = "bold"))
 
 # Afficher le graphique
 print(graphique)
@@ -362,10 +361,10 @@ library(tidyverse)
 map <- leaflet() %>% 
 
 # Ajout de tuiles de carte par défaut (OpenStreetMap)
-  addTiles() %>%
+addTiles() %>%
 
 # Ajout d'un marqueur à Toulouse avec un popup
-  addMarkers(lng = 1.43, lat = 43.6, popup = "Ce marqueur est placé à Toulouse")
+addMarkers(lng = 1.43, lat = 43.6, popup = "Ce marqueur est placé à Toulouse")
 
 # Affiche la carte
 map
@@ -394,13 +393,13 @@ dataToulouse <- data.frame(
 map_Toulouse <- leaflet(dataToulouse) %>% 
 
 # Ajout des tuiles par défaut d'OpenStreetMap
-  addTiles() %>%
+addTiles() %>%
 
 # Ajout de marqueurs sur la carte avec des popups pour chaque lieu
-  addMarkers(~lng, ~lat, popup = ~label) %>%
+addMarkers(~lng, ~lat, popup = ~label) %>%
 
 # Utilisation de tuiles Stamen Toner Lite pour un style de carte différent
-  addProviderTiles(providers$Stamen.TonerLite)
+addProviderTiles(providers$Stamen.TonerLite)
 
 # Affichage de la carte
 map_Toulouse
