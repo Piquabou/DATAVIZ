@@ -404,4 +404,28 @@ dataToulouse <- data.frame(
 
 ## Affichage de la carte avec le code en intégralité
 ```{r}
-dataToulous
+dataToulouse <- data.frame(
+  lng = c(1.431889991011, 1.448399993334, 1.447109657227),
+  lat = c(43.609126998861, 43.606276020224, 43.604503567579),
+  label = c("The Botanist Pub", "IA School", "Jardin Pierre Goudouli")
+)
+
+# Initialisation d'une carte interactive avec des données spécifiques à Toulouse
+map_Toulouse <- leaflet(dataToulouse) %>% 
+
+# Ajout des tuiles par défaut d'OpenStreetMap
+addTiles() %>%
+
+# Ajout de marqueurs sur la carte avec des popups pour chaque lieu
+addMarkers(~lng, ~lat, popup = ~label) %>%
+
+# Utilisation de tuiles Stamen Toner Lite pour un style de carte différent
+addProviderTiles(providers$Stamen.TonerLite)
+
+# Affichage de la carte
+map_Toulouse
+```
+
+<br>
+
+Maintenant que vous savez créer des graphiques avec R, passons aux <a href=exercices_r.qmd class="bouton">exercices !</a>

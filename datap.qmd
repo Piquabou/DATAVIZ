@@ -533,4 +533,15 @@ fig.update_layout(
 )
 
 # Affichage du graphique en surface 3D
-# Affiche
+# Affiche le graphique, généralement dans un navigateur web ou une interface Jupyter
+fig.show()
+```
+
+<br>
+
+Maintenant que vous savez créer des graphiques avec Python, passons aux <a href=exercices_python.qmd class="bouton">exercices !</a>
+
+
+
+
+
