@@ -386,7 +386,7 @@ ventes = [3500, 4200, 3800, 3900, 4100, 4500]
 sns.set(style="whitegrid")  # Choisir un style de fond
 
 # Définir une palette de couleurs personnalisée
-couleurs = ["#FF5733", "#33FF57", "#3366FF", "#FF33CC", "#FFFF33", "#33FFFF"]
+couleurs = ["#F35D74", "#FFC3D4", "#FFADAD", "#FFD6A5", "#FFFF33", "#4B4F5D"]
 
 # Personnaliser le graphique
 

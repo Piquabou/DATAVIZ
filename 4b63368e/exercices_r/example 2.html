@@ -18,7 +18,7 @@
 </head>
 <body>
   <div class="instructions">
-    <h2>Exercice 1  </h2>
+    <h2>Exercice 1 </h2>
     <p>
       Vous disposez d'un jeu de données représentant différentes catégories et leurs valeurs associées. Votre tâche est de créer un diagramme à barres (barplot) pour visualiser ces données. Utilisez la bibliothèque ggplot2 en R pour accomplir cela.
     </p>
@@ -49,14 +49,14 @@
       </code>
       <code data-type="sct">
         test_student_typed("library(ggplot2)", not_typed_msg = "Assurez-vous d'avoir bien charger la librarie 'ggplot2'.")
-        test_student_typed("geom_bar(", not_typed_msg = "Assurez-vous d'avoir utilise la methode 'geom_bar'.")
-        test_student_typed("stat = 'identity'", not_typed_msg = "N'oubliez pas de definir le parametre stat 'identity' dans 'geom_bar'.")
-        test_student_typed("labs(", not_typed_msg = "Assurez-vous d'utiliser 'labs' pour ajouter des titres et des etiquettes d'axes.")
+        test_student_typed("geom_bar(", not_typed_msg = "Assurez-vous d'avoir utilisé la méthode 'geom_bar'.")
+        test_student_typed("stat = 'identity'", not_typed_msg = "N'oubliez pas de définir le paramètre stat 'identity' dans 'geom_bar'.")
+        test_student_typed("labs(", not_typed_msg = "Assurez-vous d'utiliser 'labs' pour ajouter des titres et des étiquettes d'axes.")
         success_msg("Genial! Vous avez reussi a faire un 'barplot' avec R !")
       </code>
       
       <div data-type="hint">
-        <p>Indice : Utiliser 'geom_bar(stat = 'identity')' pour tracer les barres basees sur les valeurs que vous avez.</p>
+        <p>Indice : Utiliser 'geom_bar(stat = 'identity')' pour tracer les barres basées sur les valeurs que vous avez.</p>
       </div>
     </div>
   </div>
@@ -92,9 +92,9 @@
         </code>
         <code data-type="sct">
           test_student_typed("library(ggplot2)", not_typed_msg = "Assurez-vous d'avoir bien charger la librairie 'ggplot2'.")
-          test_student_typed("geom_histogram(", not_typed_msg = "Assurez-vous d'utiliser 'geom_histogram' pour creer un histogramme.")
+          test_student_typed("geom_histogram(", not_typed_msg = "Assurez-vous d'utiliser 'geom_histogram' pour créer un histogramme.")
           test_student_typed("binwidth = 5", not_typed_msg = "'geom_histogram(binwidth = 5)'")
-          test_student_typed("labs(", not_typed_msg = "Assurez-vous d'utiliser 'labs' pour ajouter des titres et des etiquettes d'axes.")
+          test_student_typed("labs(", not_typed_msg = "Assurez-vous d'utiliser 'labs' pour ajouter des titres et des étiquettes d'axes.")
           test_student_typed("theme_minimal()", not_typed_msg = "N'oubliez pas d'appliquer 'theme_minimal()")
           success_msg("Genial ! Vous avez reussi a faire un histogramme avec R !")
         </code>
@@ -137,9 +137,9 @@
         </code>
         <code data-type="sct">
           test_student_typed("library(ggplot2)", not_typed_msg = "Assurez-vous d'avoir bien charger la librairie 'ggplot2'.")
-          test_student_typed("ggplot(", not_typed_msg = "Assurez-vous d'utiliser 'ggplot' pour creer un scatterplot.")
-          test_student_typed("geom_point(", not_typed_msg = "Assurez-vous d'utiliser 'geom_point' pour creer un scatterplot.")
-          test_student_typed("labs(", not_typed_msg = "Assurez-vous d'utiliser 'labs' pour ajouter des titres et des etiquettes d'axes.")
+          test_student_typed("ggplot(", not_typed_msg = "Assurez-vous d'utiliser 'ggplot' pour créer un scatterplot.")
+          test_student_typed("geom_point(", not_typed_msg = "Assurez-vous d'utiliser 'geom_point' pour créer un scatterplot.")
+          test_student_typed("labs(", not_typed_msg = "Assurez-vous d'utiliser 'labs' pour ajouter des titres et des étiquettes d'axes.")
           test_student_typed("theme_minimal()", not_typed_msg = "N'oubliez pas d'appliquer 'theme_minimal()")
           success_msg("Genial ! Vous avez reussi a faire un scatterplot avec R !")
         </code>
@@ -196,11 +196,11 @@
         
       </code>
       <code data-type="sct">
-        test_student_typed("library(ggplot2)", not_typed_msg = "N'oubliez pas de charger la bibliotheque ggplot2.")
+        test_student_typed("library(ggplot2)", not_typed_msg = "N'oubliez pas de charger la bibliothèque ggplot2.")
         test_student_typed("ggplot(", not_typed_msg = "Vous devez commencer votre graphique avec ggplot().")
         test_student_typed("geom_line()", not_typed_msg = "Vous devez utiliser geom_line() pour les lignes du graphique.")
-        test_student_typed("facet_wrap(", not_typed_msg = "Utilisez facet_wrap() pour creer des panneaux separes pour chaque produit.")
-        test_student_typed("theme_minimal()", not_typed_msg = "Utilisez theme_minimal() pour un theme plus epure.")
+        test_student_typed("facet_wrap(", not_typed_msg = "Utilisez facet_wrap() pour créer des panneaux séparés pour chaque produit.")
+        test_student_typed("theme_minimal()", not_typed_msg = "Utilisez theme_minimal() pour un thème plus épuré.")
         success_msg("Excellent travail ! Votre graphique multi-panneaux est correctement configure.")
       </code>
       <div data-type="hint">
