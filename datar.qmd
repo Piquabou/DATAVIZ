@@ -81,6 +81,27 @@ xlab = "X", ylab = "Y", col = "blue", pch = 16)
 Un boxplot, également connu sous le nom de boîte à moustaches, est un type de visualisation de données qui représente graphiquement la distribution des données et permet de visualiser la médiane, les quartiles et les valeurs aberrantes éventuelles d'un ensemble de données.
 
 ```{r}
+# Création d'un nouveau data.frame
+
+# Définition des noms des produits
+noms_produits <- c("Produit A", "Produit B", "Produit C", "Produit D", "Produit E")
+
+# Répétition des mois pour chaque produit
+mois <- rep(c("Janvier", "Février", "Mars", "Avril"), each = length(noms_produits))
+
+# Génération de valeurs de ventes aléatoires pour chaque mois et produit
+ventes <- round(runif(length(noms_produits) * length(unique(mois)), min = 100, max = 500))
+
+# Création du data.frame en combinant les trois vecteurs précédents
+data2 <- data.frame(
+  # Colonne 'Produit' avec répétition des noms
+  Produit = rep(noms_produits, times = length(unique(mois))),  
+  # Colonne 'Mois' avec répétition des mois
+  Mois = mois,  
+  # Colonne 'Ventes' avec les valeurs aléatoires de ventes
+  Ventes = ventes
+  )
+
 # Convertir la variable "Mois" en facteur avec un ordre spécifique des niveaux
 data2$Mois <- factor(data2$Mois, levels = c("Janvier", "Février", "Mars", "Avril"))
 
