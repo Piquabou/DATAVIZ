@@ -375,37 +375,45 @@ Voici quelques raisons pour lesquelles la personnalisation des graphiques avec S
 ### Exemple de personnalisation
 
 ```{python}
-
-#| warning: true
-
-# Importe Seaborn pour des visualisations statistiques avancées
 import seaborn as sns
-
-# Importe Matplotlib pour la personnalisation de graphiques
 import matplotlib.pyplot as plt
 
-# Importe NumPy pour la manipulation de données numériques
-import numpy as np  
+# Charger le jeu de données (fictif)
+mois = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jun']
+ventes = [3500, 4200, 3800, 3900, 4100, 4500]
 
-# Génération de données aléatoires pour la heatmap
+# Créer un graphique avec Seaborn
+sns.set(style="whitegrid")  # Choisir un style de fond
 
-# Initialise le générateur de nombres aléatoires pour la reproductibilité
-np.random.seed(0)
+# Définir une palette de couleurs personnalisée
+couleurs = ["#FF5733", "#33FF57", "#3366FF", "#FF33CC", "#FFFF33", "#33FFFF"]
 
-# Crée une matrice 10x10 de nombres aléatoires entre 0 et 1
-data = np.random.rand(10, 10)  
+# Personnaliser le graphique
 
-# Création de la heatmap avec Seaborn
+# Définir la taille du graphique
+plt.figure(figsize=(10, 6)) 
 
-# Utilise la fonction heatmap de Seaborn pour visualiser la matrice de données
-sns.heatmap(data)
+# Utiliser la palette de couleurs personnalisée 
+sns.barplot(x=mois, y=ventes, palette=couleurs)
 
-# Ajout de titre
-plt.title('Exemple de Heatmap')  # Ajoute un titre au graphique
+# Ajouter un titre
+plt.title('Ventes Mensuelles', fontsize=16)
 
-# Affichage de la heatmap
-plt.show()  # Affiche la carte de chaleur à l'écran
+# Ajouter une étiquette pour l'axe x
+plt.xlabel('Mois', fontsize=14)
 
+# Ajouter une étiquette pour l'axe y
+plt.ylabel('Ventes ($)', fontsize=14)  
+
+# Ajouter des annotations
+for i, vente in enumerate(ventes):
+    plt.text(i, vente + 50, str(vente), ha='center', fontsize=12)
+
+# Afficher le graphique
+
+# Ajuster la disposition pour éviter la superposition des éléments
+plt.tight_layout()
+plt.show()
 ```
 
 # Qu'est-ce que Plotly ?
@@ -525,15 +533,4 @@ fig.update_layout(
 )
 
 # Affichage du graphique en surface 3D
-# Affiche le graphique, généralement dans un navigateur web ou une interface Jupyter
-fig.show()
-```
-
-<br>
-
-Maintenant que vous savez créer des graphiques avec Python, passons aux <a href=exercices_python.qmd class="bouton">exercices !</a>
-
-
-
-
-
+# Affiche
